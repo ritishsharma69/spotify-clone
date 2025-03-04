@@ -61,7 +61,7 @@ const MusicList: React.FC<MusicListProps> = ({
       id: 6,
       title: "Viva La Vida",
       artist: "Coldplay",
-      image: "https://via.placeholder.com/50", // Placeholder image for empty URL
+      image: "https://upload.wikimedia.org/wikipedia/en/8/84/Coldplay_-_Viva_la_Vida.jpg", 
     },
     {
       id: 7,
