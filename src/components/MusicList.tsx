@@ -62,7 +62,7 @@ const MusicList: React.FC<MusicListProps> = ({
       id: 6,
       title: "Viva La Vida",
       artist: "Coldplay",
-      image: "",
+      image: "https://via.placeholder.com/50", // Placeholder image for empty URL
     },
     {
       id: 7,
@@ -106,11 +106,22 @@ const MusicList: React.FC<MusicListProps> = ({
               onClick={() => onSelectSong(song)}
               className="d-flex align-items-center"
             >
-              <img src={song.image} alt={song.title} className="song-image" />
+              {song.image && ( // Only render image if song.image is not empty
+                <img src={song.image} alt={song.title} className="song-image" />
+              )}
               <div className="song-details">
                 <div className="song-title">{song.title}</div>
                 <div className="song-artist">{song.artist}</div>
               </div>
+              <span
+                className="favorite-icon"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent triggering the parent onClick
+                  onFavorite(song);
+                }}
+              >
+                {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
+              </span>
               <span className="song-time">3:45</span> {/* Add song time */}
             </ListGroup.Item>
           ))}
@@ -126,15 +137,22 @@ const MusicList: React.FC<MusicListProps> = ({
                   onClick={() => onSelectSong(song)}
                   className="d-flex align-items-center"
                 >
-                  <img
-                    src={song.image}
-                    alt={song.title}
-                    className="song-image"
-                  />
+                  {song.image && ( // Only render image if song.image is not empty
+                    <img src={song.image} alt={song.title} className="song-image" />
+                  )}
                   <div className="song-details">
                     <div className="song-title">{song.title}</div>
                     <div className="song-artist">{song.artist}</div>
                   </div>
+                  <span
+                    className="favorite-icon"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering the parent onClick
+                      onFavorite(song);
+                    }}
+                  >
+                    {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
+                  </span>
                   <span className="song-time">3:45</span> {/* Add song time */}
                 </ListGroup.Item>
               ))
@@ -155,15 +173,22 @@ const MusicList: React.FC<MusicListProps> = ({
                   onClick={() => onSelectSong(song)}
                   className="d-flex align-items-center"
                 >
-                  <img
-                    src={song.image}
-                    alt={song.title}
-                    className="song-image"
-                  />
+                  {song.image && ( // Only render image if song.image is not empty
+                    <img src={song.image} alt={song.title} className="song-image" />
+                  )}
                   <div className="song-details">
                     <div className="song-title">{song.title}</div>
                     <div className="song-artist">{song.artist}</div>
                   </div>
+                  <span
+                    className="favorite-icon"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering the parent onClick
+                      onFavorite(song);
+                    }}
+                  >
+                    {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
+                  </span>
                   <span className="song-time">3:45</span> {/* Add song time */}
                 </ListGroup.Item>
               ))

@@ -247,6 +247,18 @@ body {
   border-radius: 10px;
 }
 
+.favorite-icon {
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-left: auto; /* Push to the right */
+  padding: 0 10px; /* Add some spacing */
+  transition: transform 0.2s ease;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.1);
+}
+
 .music-player audio::-webkit-media-controls-play-button,
 .music-player audio::-webkit-media-controls-mute-button {
   filter: invert(1);
