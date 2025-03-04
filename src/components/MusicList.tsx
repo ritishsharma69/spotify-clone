@@ -20,7 +20,6 @@ interface MusicListProps {
 
 const MusicList: React.FC<MusicListProps> = ({
   onSelectSong,
-  onFavorite,
   favorites,
   recentlyPlayed,
   activeTab,
@@ -113,15 +112,6 @@ const MusicList: React.FC<MusicListProps> = ({
                 <div className="song-title">{song.title}</div>
                 <div className="song-artist">{song.artist}</div>
               </div>
-              <span
-                className="favorite-icon"
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent triggering the parent onClick
-                  onFavorite(song);
-                }}
-              >
-                {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
-              </span>
               <span className="song-time">3:45</span> {/* Add song time */}
             </ListGroup.Item>
           ))}
@@ -144,15 +134,6 @@ const MusicList: React.FC<MusicListProps> = ({
                     <div className="song-title">{song.title}</div>
                     <div className="song-artist">{song.artist}</div>
                   </div>
-                  <span
-                    className="favorite-icon"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent triggering the parent onClick
-                      onFavorite(song);
-                    }}
-                  >
-                    {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
-                  </span>
                   <span className="song-time">3:45</span> {/* Add song time */}
                 </ListGroup.Item>
               ))
@@ -180,15 +161,6 @@ const MusicList: React.FC<MusicListProps> = ({
                     <div className="song-title">{song.title}</div>
                     <div className="song-artist">{song.artist}</div>
                   </div>
-                  <span
-                    className="favorite-icon"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent triggering the parent onClick
-                      onFavorite(song);
-                    }}
-                  >
-                    {favorites.some((fav) => fav.id === song.id) ? "❤️" : "🤍"}
-                  </span>
                   <span className="song-time">3:45</span> {/* Add song time */}
                 </ListGroup.Item>
               ))
