@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ListGroup, Form } from "react-bootstrap";
+import { Search } from "lucide-react";
 
 // Define Song type
 interface Song {
@@ -31,25 +32,29 @@ const MusicList: React.FC<MusicListProps> = ({
       id: 1,
       title: "The Weekend",
       artist: "Starboy",
-      image: "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Weeknd_-_Starboy.png/220px-The_Weeknd_-_Starboy.png",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Weeknd_-_Starboy.png/220px-The_Weeknd_-_Starboy.png",
     },
     {
       id: 2,
       title: "Demons",
       artist: "Imagine Dragons",
-      image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Imagine_Dragons_-_%22Demons%22_%28Official_Single_Cover%29.jpg/220px-Imagine_Dragons_-_%22Demons%22_%28Official_Single_Cover%29.jpg",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Imagine_Dragons_-_%22Demons%22_%28Official_Single_Cover%29.jpg/220px-Imagine_Dragons_-_%22Demons%22_%28Official_Single_Cover%29.jpg",
     },
     {
       id: 3,
       title: "North of the River",
       artist: "Imagine Dragons",
-      image: "https://images.genius.com/575023edb4b7021498110751743477e5.300x300x1.png",
+      image:
+        "https://images.genius.com/575023edb4b7021498110751743477e5.300x300x1.png",
     },
     {
       id: 4,
       title: "Ghost Stories",
       artist: "Coldplay",
-      image: "https://upload.wikimedia.org/wikipedia/en/8/8a/Coldplay_-_Ghost_Stories.png",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/8/8a/Coldplay_-_Ghost_Stories.png",
     },
     {
       id: 5,
@@ -61,19 +66,22 @@ const MusicList: React.FC<MusicListProps> = ({
       id: 6,
       title: "Viva La Vida",
       artist: "Coldplay",
-      image: "https://upload.wikimedia.org/wikipedia/en/8/84/Coldplay_-_Viva_la_Vida.jpg", 
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/8/84/Coldplay_-_Viva_la_Vida.jpg",
     },
     {
       id: 7,
       title: "Hymn for the Weekend",
       artist: "Coldplay",
-      image: "https://upload.wikimedia.org/wikipedia/en/e/e5/Coldplay%2C_Hymn_for_the_Weekend%2C_Artwork.jpg",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/e/e5/Coldplay%2C_Hymn_for_the_Weekend%2C_Artwork.jpg",
     },
     {
       id: 8,
       title: "Pain",
       artist: "Pryor Jones",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPkbEGa5Wju6_zgYyzirfkDkKhoTYskyPjw&s",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzPkbEGa5Wju6_zgYyzirfkDkKhoTYskyPjw&s",
     },
   ];
 
@@ -87,16 +95,17 @@ const MusicList: React.FC<MusicListProps> = ({
   return (
     <div className="music-list">
       <h3>{activeTab}</h3>
-
       <div className="search-bar">
+        <Search className="search-icon" />
         <Form.Control
           type="text"
           placeholder="Search Song, Artist"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          className="search-input"
         />
       </div>
-
+    
       <ListGroup>
         {activeTab === "For You" &&
           filteredSongs.map((song) => (
@@ -116,7 +125,6 @@ const MusicList: React.FC<MusicListProps> = ({
             </ListGroup.Item>
           ))}
       </ListGroup>
-
       {activeTab === "Recently Played" && (
         <>
           <ListGroup>
@@ -128,7 +136,11 @@ const MusicList: React.FC<MusicListProps> = ({
                   className="d-flex align-items-center"
                 >
                   {song.image && ( // Only render image if song.image is not empty
-                    <img src={song.image} alt={song.title} className="song-image" />
+                    <img
+                      src={song.image}
+                      alt={song.title}
+                      className="song-image"
+                    />
                   )}
                   <div className="song-details">
                     <div className="song-title">{song.title}</div>
@@ -143,7 +155,6 @@ const MusicList: React.FC<MusicListProps> = ({
           </ListGroup>
         </>
       )}
-
       {activeTab === "Favourite" && (
         <>
           <ListGroup>
@@ -155,7 +166,11 @@ const MusicList: React.FC<MusicListProps> = ({
                   className="d-flex align-items-center"
                 >
                   {song.image && ( // Only render image if song.image is not empty
-                    <img src={song.image} alt={song.title} className="song-image" />
+                    <img
+                      src={song.image}
+                      alt={song.title}
+                      className="song-image"
+                    />
                   )}
                   <div className="song-details">
                     <div className="song-title">{song.title}</div>

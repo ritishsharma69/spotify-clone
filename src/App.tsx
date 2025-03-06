@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MusicList from './components/MusicList';
 import MusicPlayer from './components/MusicPlayer';
+import Vector from "./assets/Vector.png"
+
 import './styles.scss';
 
 const App: React.FC = () => {
@@ -62,7 +64,7 @@ const App: React.FC = () => {
 
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <h2>Spotify Clone</h2>
+        <img src={Vector} alt="logo" style={{width:"131.53px", height:"39.41px"}}/>
         <ul>
           {['For You', 'Recently Played', 'Favourite'].map((tab) => (
             <li
@@ -96,8 +98,11 @@ const App: React.FC = () => {
             <MusicPlayer
               song={currentSong}
               onFavorite={() => handleFavorite(currentSong)}
-              isFavorite={favorites.some((fav) => fav.id === currentSong.id)}
-            />
+              isFavorite={favorites.some((fav) => fav.id === currentSong.id)} onNext={function (): void {
+                throw new Error('Function not implemented.');
+              } } onPrevious={function (): void {
+                throw new Error('Function not implemented.');
+              } }            />
           </div>
         )}
       </div>
@@ -106,3 +111,12 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
