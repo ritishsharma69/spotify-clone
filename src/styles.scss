@@ -186,7 +186,7 @@ body {
 .music-list .list-group .list-group-item .song-image {
   width: 50px;
   height: 50px;
-  border-radius: 50px;
+  border-radius: 10px;
   margin-right: 20px;
 }
 
@@ -211,7 +211,7 @@ body {
 
 /* Music Player Styles */
 .music-player-container {
-  width: 900px; // Fixed width for Music Player
+  width: 800px; // Fixed width for Music Player
   background: linear-gradient(135deg, #1db954, #191414); // Gradient background
   padding: 20px;
   display: flex;
