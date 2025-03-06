@@ -9,7 +9,6 @@ type MusicPlayerProps = {
     image: string;
   };
   onFavorite: () => void;
-  isFavorite: boolean;
   onNext: () => void;
   onPrevious: () => void;
 };
@@ -17,7 +16,6 @@ type MusicPlayerProps = {
 const MusicPlayer: React.FC<MusicPlayerProps> = ({
   song,
   onFavorite,
-  isFavorite,
   onNext,
   onPrevious,
 }) => {
@@ -99,16 +97,16 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             )}
           </div>
           <button className="control-button" onClick={onPrevious}>
-            <SkipBack size={24} color="#ffffff" />
+            <SkipBack size={24} fill="#ffffff" />
           </button>
           <button className="control-button play-pause" onClick={togglePlayPause}>
-            {isPlaying ? <Pause size={32} color="#ffffff" /> : <Play size={32} color="#ffffff" />}
+            {isPlaying ? <Pause size={32} fill="#ffffff" /> : <Play size={32} fill="#ffffff" />}
           </button>
           <button className="control-button" onClick={onNext}>
-            <SkipForward size={24} color="#ffffff" />
+            <SkipForward size={24} fill="#ffffff" />
           </button>
           <button className="control-button" onClick={toggleMute}>
-            {isMuted ? <VolumeX size={24} color="#ffffff" /> : <Volume2 size={24} color="#ffffff" />}
+            {isMuted ? <VolumeX size={24} fill="#ffffff" /> : <Volume2 size={24} fill="#ffffff" />}
           </button>
         </div>
       </div>
